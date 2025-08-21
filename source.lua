@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 65 | Scripts: 16 | Modules: 1 | Tags: 0
+-- Instances: 85 | Scripts: 21 | Modules: 1 | Tags: 0
 local G2L = {};
 
 -- StarterGui.Niko Interface
@@ -20,7 +20,6 @@ G2L["1"]["ResetOnSpawn"] = false;
 -- StarterGui.Niko Interface.CommandBar
 G2L["2"] = Instance.new("TextBox", G2L["1"]);
 G2L["2"]["Visible"] = false;
-G2L["2"]["CursorPosition"] = -1;
 G2L["2"]["Name"] = [[CommandBar]];
 G2L["2"]["PlaceholderColor3"] = Color3.fromRGB(26, 26, 26);
 G2L["2"]["BorderSizePixel"] = 0;
@@ -147,389 +146,543 @@ G2L["11"] = Instance.new("LocalScript", G2L["1"]);
 G2L["11"]["Name"] = [[Handler]];
 
 
--- StarterGui.Niko Interface.API
-G2L["12"] = Instance.new("ModuleScript", G2L["1"]);
-G2L["12"]["Name"] = [[API]];
+-- StarterGui.Niko Interface.Handler.Notification
+G2L["12"] = Instance.new("Frame", G2L["11"]);
+G2L["12"]["Visible"] = false;
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["12"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["12"]["Size"] = UDim2.new(0, 400, 0, 250);
+G2L["12"]["Position"] = UDim2.new(0.5, 0, -0.5, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Name"] = [[Notification]];
 
 
--- StarterGui.Niko Interface.CommandList
-G2L["13"] = Instance.new("Frame", G2L["1"]);
-G2L["13"]["BorderSizePixel"] = 0;
-G2L["13"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
-G2L["13"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["13"]["Size"] = UDim2.new(0, 450, 0, 375);
-G2L["13"]["Position"] = UDim2.new(0.5, 0, -0.6, 0);
-G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13"]["Name"] = [[CommandList]];
+-- StarterGui.Niko Interface.Handler.Notification.UICorner
+G2L["13"] = Instance.new("UICorner", G2L["12"]);
+G2L["13"]["CornerRadius"] = UDim.new(0, 32);
 
 
--- StarterGui.Niko Interface.CommandList.UIGradient
-G2L["14"] = Instance.new("UIGradient", G2L["13"]);
-G2L["14"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+-- StarterGui.Niko Interface.Handler.Notification.StartUp
+G2L["14"] = Instance.new("Sound", G2L["12"]);
+G2L["14"]["Volume"] = 0;
+G2L["14"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["14"]["Name"] = [[StartUp]];
+G2L["14"]["SoundId"] = [[rbxassetid://3398620867]];
 
 
--- StarterGui.Niko Interface.CommandList.TextLabel
-G2L["15"] = Instance.new("TextLabel", G2L["13"]);
-G2L["15"]["TextWrapped"] = true;
-G2L["15"]["TextStrokeTransparency"] = 0;
-G2L["15"]["BorderSizePixel"] = 0;
-G2L["15"]["TextSize"] = 14;
-G2L["15"]["TextScaled"] = true;
-G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["15"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15"]["BackgroundTransparency"] = 1;
-G2L["15"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["Text"] = [[Niko Commands]];
-G2L["15"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- StarterGui.Niko Interface.Handler.Notification.StartUp.LocalScript
+G2L["15"] = Instance.new("LocalScript", G2L["14"]);
 
 
--- StarterGui.Niko Interface.CommandList.TextLabel.UIGradient
-G2L["16"] = Instance.new("UIGradient", G2L["15"]);
+
+-- StarterGui.Niko Interface.Handler.Notification.UIGradient
+G2L["16"] = Instance.new("UIGradient", G2L["12"]);
 G2L["16"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
 
 
+-- StarterGui.Niko Interface.Handler.Notification.UIStroke
+G2L["17"] = Instance.new("UIStroke", G2L["12"]);
+G2L["17"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["17"]["Thickness"] = 3.75;
+G2L["17"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.Niko Interface.Handler.Notification.UIStroke.UIGradient
+G2L["18"] = Instance.new("UIGradient", G2L["17"]);
+G2L["18"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Handler.Notification.UIStroke.UIGradient.LocalScript
+G2L["19"] = Instance.new("LocalScript", G2L["18"]);
+
+
+
+-- StarterGui.Niko Interface.Handler.Notification.Frame
+G2L["1a"] = Instance.new("Frame", G2L["12"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["Size"] = UDim2.new(0, 400, 0, 7);
+G2L["1a"]["Position"] = UDim2.new(0, 0, 0.19867, 0);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Niko Interface.Handler.Notification.Frame.UIGradient
+G2L["1b"] = Instance.new("UIGradient", G2L["1a"]);
+G2L["1b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Handler.Notification.TextButton
+G2L["1c"] = Instance.new("TextButton", G2L["12"]);
+G2L["1c"]["TextWrapped"] = true;
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextSize"] = 14;
+G2L["1c"]["TextScaled"] = true;
+G2L["1c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["1c"]["Size"] = UDim2.new(0, 200, 0, 28);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[OK]];
+G2L["1c"]["Position"] = UDim2.new(0.25, 0, 0.876, 0);
+
+
+-- StarterGui.Niko Interface.Handler.Notification.TextButton.UICorner
+G2L["1d"] = Instance.new("UICorner", G2L["1c"]);
+G2L["1d"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.Niko Interface.Handler.Notification.TextButton.UIGradient
+G2L["1e"] = Instance.new("UIGradient", G2L["1c"]);
+G2L["1e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Handler.Notification.TextButton.LocalScript
+G2L["1f"] = Instance.new("LocalScript", G2L["1c"]);
+
+
+
+-- StarterGui.Niko Interface.Handler.Notification.LocalScript
+G2L["20"] = Instance.new("LocalScript", G2L["12"]);
+G2L["20"]["Enabled"] = false;
+G2L["20"]["Disabled"] = true;
+
+
+-- StarterGui.Niko Interface.Handler.Notification.ContentText
+G2L["21"] = Instance.new("TextLabel", G2L["12"]);
+G2L["21"]["TextWrapped"] = true;
+G2L["21"]["TextStrokeTransparency"] = 0;
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["TextSize"] = 68;
+G2L["21"]["TextScaled"] = true;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["21"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["BackgroundTransparency"] = 1;
+G2L["21"]["Size"] = UDim2.new(0, 367, 0, 159);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Text"] = [[Sample Notification]];
+G2L["21"]["Name"] = [[ContentText]];
+G2L["21"]["Position"] = UDim2.new(0.04, 0, 0.22267, 0);
+
+
+-- StarterGui.Niko Interface.Handler.Notification.ContentText.UIGradient
+G2L["22"] = Instance.new("UIGradient", G2L["21"]);
+G2L["22"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Handler.Notification.Title
+G2L["23"] = Instance.new("TextLabel", G2L["12"]);
+G2L["23"]["TextWrapped"] = true;
+G2L["23"]["TextStrokeTransparency"] = 0;
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["TextSize"] = 24;
+G2L["23"]["TextScaled"] = true;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["BackgroundTransparency"] = 1;
+G2L["23"]["Size"] = UDim2.new(0, 300, 0, 50);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Text"] = [[Niko Admin]];
+G2L["23"]["Name"] = [[Title]];
+G2L["23"]["Position"] = UDim2.new(0.15, 0, -0.004, 0);
+
+
+-- StarterGui.Niko Interface.Handler.Notification.Title.UIGradient
+G2L["24"] = Instance.new("UIGradient", G2L["23"]);
+G2L["24"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Handler.Notification.Title.UIGradient.LocalScript
+G2L["25"] = Instance.new("LocalScript", G2L["24"]);
+
+
+
+-- StarterGui.Niko Interface.API
+G2L["26"] = Instance.new("ModuleScript", G2L["1"]);
+G2L["26"]["Name"] = [[API]];
+
+
+-- StarterGui.Niko Interface.CommandList
+G2L["27"] = Instance.new("Frame", G2L["1"]);
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
+G2L["27"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["27"]["Size"] = UDim2.new(0, 450, 0, 375);
+G2L["27"]["Position"] = UDim2.new(0.5, 0, -0.6, 0);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["27"]["Name"] = [[CommandList]];
+
+
+-- StarterGui.Niko Interface.CommandList.UIGradient
+G2L["28"] = Instance.new("UIGradient", G2L["27"]);
+G2L["28"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.CommandList.TextLabel
+G2L["29"] = Instance.new("TextLabel", G2L["27"]);
+G2L["29"]["TextWrapped"] = true;
+G2L["29"]["TextStrokeTransparency"] = 0;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["TextSize"] = 14;
+G2L["29"]["TextScaled"] = true;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["29"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["BackgroundTransparency"] = 1;
+G2L["29"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Text"] = [[Niko Commands]];
+G2L["29"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+
+
+-- StarterGui.Niko Interface.CommandList.TextLabel.UIGradient
+G2L["2a"] = Instance.new("UIGradient", G2L["29"]);
+G2L["2a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
 -- StarterGui.Niko Interface.CommandList.TextLabel.UIGradient.LocalScript
-G2L["17"] = Instance.new("LocalScript", G2L["16"]);
+G2L["2b"] = Instance.new("LocalScript", G2L["2a"]);
 
 
 
 -- StarterGui.Niko Interface.CommandList.Frame
-G2L["18"] = Instance.new("Frame", G2L["13"]);
-G2L["18"]["BorderSizePixel"] = 0;
-G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18"]["Size"] = UDim2.new(0, 450, 0, 7);
-G2L["18"]["Position"] = UDim2.new(0, 0, 0.11467, 0);
-G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18"]["BackgroundTransparency"] = 0.5;
+G2L["2c"] = Instance.new("Frame", G2L["27"]);
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["Size"] = UDim2.new(0, 450, 0, 7);
+G2L["2c"]["Position"] = UDim2.new(0, 0, 0.11467, 0);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["BackgroundTransparency"] = 0.5;
 
 
 -- StarterGui.Niko Interface.CommandList.Frame.UIGradient
-G2L["19"] = Instance.new("UIGradient", G2L["18"]);
-G2L["19"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+G2L["2d"] = Instance.new("UIGradient", G2L["2c"]);
+G2L["2d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
 
 
 -- StarterGui.Niko Interface.CommandList.UICorner
-G2L["1a"] = Instance.new("UICorner", G2L["13"]);
-G2L["1a"]["CornerRadius"] = UDim.new(0, 16);
+G2L["2e"] = Instance.new("UICorner", G2L["27"]);
+G2L["2e"]["CornerRadius"] = UDim.new(0, 16);
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame
-G2L["1b"] = Instance.new("ScrollingFrame", G2L["13"]);
-G2L["1b"]["Active"] = true;
-G2L["1b"]["BorderSizePixel"] = 0;
-G2L["1b"]["CanvasSize"] = UDim2.new(0, 0, 50, 0);
-G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b"]["Size"] = UDim2.new(0, 450, 0, 325);
-G2L["1b"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Position"] = UDim2.new(0, 0, 0.13333, 0);
-G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["2f"] = Instance.new("ScrollingFrame", G2L["27"]);
+G2L["2f"]["Active"] = true;
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["CanvasSize"] = UDim2.new(0, 0, 50, 0);
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["Size"] = UDim2.new(0, 450, 0, 325);
+G2L["2f"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Position"] = UDim2.new(0, 0, 0.13333, 0);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.UIListLayout
-G2L["1c"] = Instance.new("UIListLayout", G2L["1b"]);
-G2L["1c"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["1c"]["Padding"] = UDim.new(0, 25);
-G2L["1c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["30"] = Instance.new("UIListLayout", G2L["2f"]);
+G2L["30"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["30"]["Padding"] = UDim.new(0, 25);
+G2L["30"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler
-G2L["1d"] = Instance.new("LocalScript", G2L["1b"]);
-G2L["1d"]["Name"] = [[ListHandler]];
+G2L["31"] = Instance.new("LocalScript", G2L["2f"]);
+G2L["31"]["Name"] = [[ListHandler]];
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd
-G2L["1e"] = Instance.new("TextLabel", G2L["1d"]);
-G2L["1e"]["TextWrapped"] = true;
-G2L["1e"]["BorderSizePixel"] = 0;
-G2L["1e"]["TextSize"] = 20;
-G2L["1e"]["TextScaled"] = true;
-G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1e"]["BackgroundTransparency"] = 1;
-G2L["1e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1e"]["Size"] = UDim2.new(0, 300, 0, 150);
-G2L["1e"]["Visible"] = false;
-G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1e"]["Text"] = [[Template]];
-G2L["1e"]["Name"] = [[Cmd]];
-G2L["1e"]["Position"] = UDim2.new(0.09667, 0, -0, 0);
+G2L["32"] = Instance.new("TextLabel", G2L["31"]);
+G2L["32"]["TextWrapped"] = true;
+G2L["32"]["BorderSizePixel"] = 0;
+G2L["32"]["TextSize"] = 20;
+G2L["32"]["TextScaled"] = true;
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["32"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["BackgroundTransparency"] = 1;
+G2L["32"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["32"]["Size"] = UDim2.new(0, 300, 0, 150);
+G2L["32"]["Visible"] = false;
+G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Text"] = [[Template]];
+G2L["32"]["Name"] = [[Cmd]];
+G2L["32"]["Position"] = UDim2.new(0.09667, 0, -0, 0);
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd.UIStroke
-G2L["1f"] = Instance.new("UIStroke", G2L["1e"]);
-G2L["1f"]["Thickness"] = 0.5;
-G2L["1f"]["Color"] = Color3.fromRGB(255, 255, 255);
+G2L["33"] = Instance.new("UIStroke", G2L["32"]);
+G2L["33"]["Thickness"] = 0.5;
+G2L["33"]["Color"] = Color3.fromRGB(255, 255, 255);
 
 
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd.UIStroke.UIGradient
-G2L["20"] = Instance.new("UIGradient", G2L["1f"]);
-G2L["20"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd.UIStroke.UIGradient.LocalScript
-G2L["21"] = Instance.new("LocalScript", G2L["20"]);
-
-
-
--- StarterGui.Niko Interface.CommandList.TextButton
-G2L["22"] = Instance.new("TextButton", G2L["13"]);
-G2L["22"]["TextWrapped"] = true;
-G2L["22"]["BorderSizePixel"] = 0;
-G2L["22"]["TextSize"] = 14;
-G2L["22"]["TextScaled"] = true;
-G2L["22"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
-G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["22"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["Text"] = [[X]];
-G2L["22"]["Position"] = UDim2.new(0.90667, 0, 0.02667, 0);
-
-
--- StarterGui.Niko Interface.CommandList.TextButton.UICorner
-G2L["23"] = Instance.new("UICorner", G2L["22"]);
-G2L["23"]["CornerRadius"] = UDim.new(1, 0);
-
-
--- StarterGui.Niko Interface.CommandList.TextButton.UIGradient
-G2L["24"] = Instance.new("UIGradient", G2L["22"]);
-G2L["24"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.CommandList.TextButton.LocalScript
-G2L["25"] = Instance.new("LocalScript", G2L["22"]);
-
-
-
--- StarterGui.Niko Interface.Loaded
-G2L["26"] = Instance.new("Frame", G2L["1"]);
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
-G2L["26"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["26"]["Size"] = UDim2.new(0, 400, 0, 250);
-G2L["26"]["Position"] = UDim2.new(0.5, 0, -0.4, 0);
-G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26"]["Name"] = [[Loaded]];
-
-
--- StarterGui.Niko Interface.Loaded.UICorner
-G2L["27"] = Instance.new("UICorner", G2L["26"]);
-G2L["27"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.Niko Interface.Loaded.StartUp
-G2L["28"] = Instance.new("Sound", G2L["26"]);
-G2L["28"]["Volume"] = 10;
-G2L["28"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
-G2L["28"]["Name"] = [[StartUp]];
-G2L["28"]["SoundId"] = [[rbxassetid://2084290015]];
-
-
--- StarterGui.Niko Interface.Loaded.StartUp.LocalScript
-G2L["29"] = Instance.new("LocalScript", G2L["28"]);
-
-
-
--- StarterGui.Niko Interface.Loaded.UIGradient
-G2L["2a"] = Instance.new("UIGradient", G2L["26"]);
-G2L["2a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.Loaded.UIStroke
-G2L["2b"] = Instance.new("UIStroke", G2L["26"]);
-G2L["2b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["2b"]["Thickness"] = 3.75;
-G2L["2b"]["Color"] = Color3.fromRGB(255, 255, 255);
-
-
--- StarterGui.Niko Interface.Loaded.UIStroke.UIGradient
-G2L["2c"] = Instance.new("UIGradient", G2L["2b"]);
-G2L["2c"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.Loaded.UIStroke.UIGradient.LocalScript
-G2L["2d"] = Instance.new("LocalScript", G2L["2c"]);
-
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel
-G2L["2e"] = Instance.new("TextLabel", G2L["26"]);
-G2L["2e"]["TextWrapped"] = true;
-G2L["2e"]["TextStrokeTransparency"] = 0;
-G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["TextSize"] = 14;
-G2L["2e"]["TextScaled"] = true;
-G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["2e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2e"]["BackgroundTransparency"] = 1;
-G2L["2e"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["Text"] = [[Niko Admin]];
-G2L["2e"]["Position"] = UDim2.new(0.25, 0, 0, 0);
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
-G2L["2f"] = Instance.new("UIGradient", G2L["2e"]);
-G2L["2f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient.LocalScript
-G2L["30"] = Instance.new("LocalScript", G2L["2f"]);
-
-
-
--- StarterGui.Niko Interface.Loaded.Frame
-G2L["31"] = Instance.new("Frame", G2L["26"]);
-G2L["31"]["BorderSizePixel"] = 0;
-G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["31"]["Size"] = UDim2.new(0, 400, 0, 7);
-G2L["31"]["Position"] = UDim2.new(0, 0, 0.19867, 0);
-G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["31"]["BackgroundTransparency"] = 0.5;
-
-
--- StarterGui.Niko Interface.Loaded.Frame.UIGradient
-G2L["32"] = Instance.new("UIGradient", G2L["31"]);
-G2L["32"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel
-G2L["33"] = Instance.new("TextLabel", G2L["26"]);
-G2L["33"]["TextWrapped"] = true;
-G2L["33"]["TextStrokeTransparency"] = 0;
-G2L["33"]["BorderSizePixel"] = 0;
-G2L["33"]["TextSize"] = 14;
-G2L["33"]["TextScaled"] = true;
-G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["33"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["BackgroundTransparency"] = 1;
-G2L["33"]["Size"] = UDim2.new(0, 367, 0, 50);
-G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["33"]["Text"] = [[Successfully loaded!]];
-G2L["33"]["Position"] = UDim2.new(0.04, 0, 0.276, 0);
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
 G2L["34"] = Instance.new("UIGradient", G2L["33"]);
 G2L["34"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
 
 
--- StarterGui.Niko Interface.Loaded.TextLabel
-G2L["35"] = Instance.new("TextLabel", G2L["26"]);
-G2L["35"]["TextWrapped"] = true;
-G2L["35"]["TextStrokeTransparency"] = 0;
-G2L["35"]["BorderSizePixel"] = 0;
-G2L["35"]["TextSize"] = 14;
-G2L["35"]["TextScaled"] = true;
-G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["35"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["35"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["35"]["BackgroundTransparency"] = 1;
-G2L["35"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["35"]["Text"] = [[made by catt0q]];
-G2L["35"]["Position"] = UDim2.new(0.25, 0, 0.8, 0);
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
-G2L["36"] = Instance.new("UIGradient", G2L["35"]);
-G2L["36"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
-
-
--- StarterGui.Niko Interface.Loaded.TextLabel.LocalScript
-G2L["37"] = Instance.new("LocalScript", G2L["35"]);
+-- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd.UIStroke.UIGradient.LocalScript
+G2L["35"] = Instance.new("LocalScript", G2L["34"]);
 
 
 
--- StarterGui.Niko Interface.Loaded.TextLabel
-G2L["38"] = Instance.new("TextLabel", G2L["26"]);
-G2L["38"]["TextWrapped"] = true;
-G2L["38"]["TextStrokeTransparency"] = 0;
-G2L["38"]["BorderSizePixel"] = 0;
-G2L["38"]["TextSize"] = 14;
-G2L["38"]["TextScaled"] = true;
-G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["38"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["38"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["38"]["BackgroundTransparency"] = 1;
-G2L["38"]["Size"] = UDim2.new(0, 367, 0, 50);
-G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Text"] = [[t.me/qcatscripts https://discord.gg/TWuyqMYGHX]];
-G2L["38"]["Position"] = UDim2.new(0.04, 0, 0.5, 0);
+-- StarterGui.Niko Interface.CommandList.TextButton
+G2L["36"] = Instance.new("TextButton", G2L["27"]);
+G2L["36"]["TextWrapped"] = true;
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextSize"] = 14;
+G2L["36"]["TextScaled"] = true;
+G2L["36"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/Michroma.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[X]];
+G2L["36"]["Position"] = UDim2.new(0.90667, 0, 0.02667, 0);
 
 
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
-G2L["39"] = Instance.new("UIGradient", G2L["38"]);
-G2L["39"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+-- StarterGui.Niko Interface.CommandList.TextButton.UICorner
+G2L["37"] = Instance.new("UICorner", G2L["36"]);
+G2L["37"]["CornerRadius"] = UDim.new(1, 0);
 
 
--- StarterGui.Niko Interface.Loaded.TextLabel
-G2L["3a"] = Instance.new("TextLabel", G2L["26"]);
-G2L["3a"]["TextWrapped"] = true;
-G2L["3a"]["TextStrokeTransparency"] = 0;
+-- StarterGui.Niko Interface.CommandList.TextButton.UIGradient
+G2L["38"] = Instance.new("UIGradient", G2L["36"]);
+G2L["38"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.CommandList.TextButton.LocalScript
+G2L["39"] = Instance.new("LocalScript", G2L["36"]);
+
+
+
+-- StarterGui.Niko Interface.Loaded
+G2L["3a"] = Instance.new("Frame", G2L["1"]);
 G2L["3a"]["BorderSizePixel"] = 0;
-G2L["3a"]["TextSize"] = 14;
-G2L["3a"]["TextScaled"] = true;
-G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["3a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3a"]["BackgroundTransparency"] = 1;
-G2L["3a"]["Size"] = UDim2.new(0, 367, 0, 50);
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(81, 81, 81);
+G2L["3a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["3a"]["Size"] = UDim2.new(0, 400, 0, 250);
+G2L["3a"]["Position"] = UDim2.new(0.5, 0, -0.4, 0);
 G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3a"]["Text"] = [[Enjoy! Press = to open cmd bar!]];
-G2L["3a"]["Position"] = UDim2.new(0.0375, 0, 0.676, 0);
+G2L["3a"]["Name"] = [[Loaded]];
 
 
--- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
-G2L["3b"] = Instance.new("UIGradient", G2L["3a"]);
-G2L["3b"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+-- StarterGui.Niko Interface.Loaded.UICorner
+G2L["3b"] = Instance.new("UICorner", G2L["3a"]);
+G2L["3b"]["CornerRadius"] = UDim.new(0, 32);
 
 
--- StarterGui.Niko Interface.Loaded.TextButton
-G2L["3c"] = Instance.new("TextButton", G2L["26"]);
-G2L["3c"]["TextWrapped"] = true;
-G2L["3c"]["BorderSizePixel"] = 0;
-G2L["3c"]["TextTransparency"] = 1;
-G2L["3c"]["TextSize"] = 14;
-G2L["3c"]["TextScaled"] = true;
-G2L["3c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["3c"]["BackgroundTransparency"] = 1;
-G2L["3c"]["Size"] = UDim2.new(0, 200, 0, 28);
-G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3c"]["Text"] = [[OK]];
-G2L["3c"]["Position"] = UDim2.new(0.25, 0, 0.876, 0);
+-- StarterGui.Niko Interface.Loaded.StartUp
+G2L["3c"] = Instance.new("Sound", G2L["3a"]);
+G2L["3c"]["Volume"] = 10;
+G2L["3c"]["RollOffMode"] = Enum.RollOffMode.InverseTapered;
+G2L["3c"]["Name"] = [[StartUp]];
+G2L["3c"]["SoundId"] = [[rbxassetid://2084290015]];
 
 
--- StarterGui.Niko Interface.Loaded.TextButton.UICorner
-G2L["3d"] = Instance.new("UICorner", G2L["3c"]);
-G2L["3d"]["CornerRadius"] = UDim.new(0, 32);
+-- StarterGui.Niko Interface.Loaded.StartUp.LocalScript
+G2L["3d"] = Instance.new("LocalScript", G2L["3c"]);
 
 
--- StarterGui.Niko Interface.Loaded.TextButton.UIGradient
-G2L["3e"] = Instance.new("UIGradient", G2L["3c"]);
+
+-- StarterGui.Niko Interface.Loaded.UIGradient
+G2L["3e"] = Instance.new("UIGradient", G2L["3a"]);
 G2L["3e"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
 
 
+-- StarterGui.Niko Interface.Loaded.UIStroke
+G2L["3f"] = Instance.new("UIStroke", G2L["3a"]);
+G2L["3f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["3f"]["Thickness"] = 3.75;
+G2L["3f"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.Niko Interface.Loaded.UIStroke.UIGradient
+G2L["40"] = Instance.new("UIGradient", G2L["3f"]);
+G2L["40"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.UIStroke.UIGradient.LocalScript
+G2L["41"] = Instance.new("LocalScript", G2L["40"]);
+
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel
+G2L["42"] = Instance.new("TextLabel", G2L["3a"]);
+G2L["42"]["TextWrapped"] = true;
+G2L["42"]["TextStrokeTransparency"] = 0;
+G2L["42"]["BorderSizePixel"] = 0;
+G2L["42"]["TextSize"] = 14;
+G2L["42"]["TextScaled"] = true;
+G2L["42"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["42"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["42"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["42"]["BackgroundTransparency"] = 1;
+G2L["42"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["42"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["42"]["Text"] = [[Niko Admin]];
+G2L["42"]["Position"] = UDim2.new(0.25, 0, 0, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
+G2L["43"] = Instance.new("UIGradient", G2L["42"]);
+G2L["43"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient.LocalScript
+G2L["44"] = Instance.new("LocalScript", G2L["43"]);
+
+
+
+-- StarterGui.Niko Interface.Loaded.Frame
+G2L["45"] = Instance.new("Frame", G2L["3a"]);
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["45"]["Size"] = UDim2.new(0, 400, 0, 7);
+G2L["45"]["Position"] = UDim2.new(0, 0, 0.19867, 0);
+G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["45"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Niko Interface.Loaded.Frame.UIGradient
+G2L["46"] = Instance.new("UIGradient", G2L["45"]);
+G2L["46"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel
+G2L["47"] = Instance.new("TextLabel", G2L["3a"]);
+G2L["47"]["TextWrapped"] = true;
+G2L["47"]["TextStrokeTransparency"] = 0;
+G2L["47"]["BorderSizePixel"] = 0;
+G2L["47"]["TextSize"] = 14;
+G2L["47"]["TextScaled"] = true;
+G2L["47"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["47"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["47"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["47"]["BackgroundTransparency"] = 1;
+G2L["47"]["Size"] = UDim2.new(0, 367, 0, 50);
+G2L["47"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["47"]["Text"] = [[Successfully loaded!]];
+G2L["47"]["Position"] = UDim2.new(0.04, 0, 0.276, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
+G2L["48"] = Instance.new("UIGradient", G2L["47"]);
+G2L["48"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel
+G2L["49"] = Instance.new("TextLabel", G2L["3a"]);
+G2L["49"]["TextWrapped"] = true;
+G2L["49"]["TextStrokeTransparency"] = 0;
+G2L["49"]["BorderSizePixel"] = 0;
+G2L["49"]["TextSize"] = 14;
+G2L["49"]["TextScaled"] = true;
+G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["49"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["BackgroundTransparency"] = 1;
+G2L["49"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["49"]["Text"] = [[made by catt0q]];
+G2L["49"]["Position"] = UDim2.new(0.25, 0, 0.8, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
+G2L["4a"] = Instance.new("UIGradient", G2L["49"]);
+G2L["4a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.LocalScript
+G2L["4b"] = Instance.new("LocalScript", G2L["49"]);
+
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel
+G2L["4c"] = Instance.new("TextLabel", G2L["3a"]);
+G2L["4c"]["TextWrapped"] = true;
+G2L["4c"]["TextStrokeTransparency"] = 0;
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["TextSize"] = 14;
+G2L["4c"]["TextScaled"] = true;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["4c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["BackgroundTransparency"] = 1;
+G2L["4c"]["Size"] = UDim2.new(0, 367, 0, 50);
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["Text"] = [[t.me/qcatscripts https://discord.gg/TWuyqMYGHX]];
+G2L["4c"]["Position"] = UDim2.new(0.04, 0, 0.5, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
+G2L["4d"] = Instance.new("UIGradient", G2L["4c"]);
+G2L["4d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel
+G2L["4e"] = Instance.new("TextLabel", G2L["3a"]);
+G2L["4e"]["TextWrapped"] = true;
+G2L["4e"]["TextStrokeTransparency"] = 0;
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["TextSize"] = 14;
+G2L["4e"]["TextScaled"] = true;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["4e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["BackgroundTransparency"] = 1;
+G2L["4e"]["Size"] = UDim2.new(0, 367, 0, 50);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Text"] = [[Enjoy! Press = to open cmd bar!]];
+G2L["4e"]["Position"] = UDim2.new(0.0375, 0, 0.676, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient
+G2L["4f"] = Instance.new("UIGradient", G2L["4e"]);
+G2L["4f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
+-- StarterGui.Niko Interface.Loaded.TextButton
+G2L["50"] = Instance.new("TextButton", G2L["3a"]);
+G2L["50"]["TextWrapped"] = true;
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["TextTransparency"] = 1;
+G2L["50"]["TextSize"] = 14;
+G2L["50"]["TextScaled"] = true;
+G2L["50"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["50"]["BackgroundTransparency"] = 1;
+G2L["50"]["Size"] = UDim2.new(0, 200, 0, 28);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["Text"] = [[OK]];
+G2L["50"]["Position"] = UDim2.new(0.25, 0, 0.876, 0);
+
+
+-- StarterGui.Niko Interface.Loaded.TextButton.UICorner
+G2L["51"] = Instance.new("UICorner", G2L["50"]);
+G2L["51"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.Niko Interface.Loaded.TextButton.UIGradient
+G2L["52"] = Instance.new("UIGradient", G2L["50"]);
+G2L["52"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(171, 0, 128)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(86, 86, 255))};
+
+
 -- StarterGui.Niko Interface.Loaded.TextButton.LocalScript
-G2L["3f"] = Instance.new("LocalScript", G2L["3c"]);
+G2L["53"] = Instance.new("LocalScript", G2L["50"]);
 
 
 
 -- StarterGui.Niko Interface.Loaded.LocalScript
-G2L["40"] = Instance.new("LocalScript", G2L["26"]);
+G2L["54"] = Instance.new("LocalScript", G2L["3a"]);
 
 
 
 -- StarterGui.Niko Interface.LocalScript
-G2L["41"] = Instance.new("LocalScript", G2L["1"]);
+G2L["55"] = Instance.new("LocalScript", G2L["1"]);
 
 
 
@@ -548,9 +701,9 @@ local function require(Module:ModuleScript)
     return G2L_REQUIRE(Module);
 end
 
-G2L_MODULES[G2L["12"]] = {
+G2L_MODULES[G2L["26"]] = {
 Closure = function()
-    local script = G2L["12"];-- NikoAPI Module
+    local script = G2L["26"];-- NikoAPI Module
 local NikoAPI = {}
 NikoAPI.Commands = {}
 
@@ -799,7 +952,9 @@ local script = G2L["11"];
 	local TweenService = game:GetService("TweenService")
 	local Lighting = game:GetService("Lighting")
 	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
 	local speaker = game.Players.LocalPlayer
+	local NotificationTemplate = script:WaitForChild("Notification")
 	local CommandBar = script.Parent:WaitForChild("CommandBar")
 	local CommandList = script.Parent:WaitForChild("CommandList")
 	local NikoAPI = require(script.Parent:WaitForChild("API"))
@@ -809,6 +964,26 @@ local script = G2L["11"];
 	local TweenService = game:GetService("TweenService")
 	local AnimationSpeed = 1
 	local SettingSpeed = false
+	local walkflinging = false
+	local function notify(title, content)
+		local notify = NotificationTemplate:Clone()
+		notify.LocalScript.Enabled = true
+		notify.StartUp.Volume = 3
+		notify.Title.Text = title
+		notify.ContentText.Text = content
+		notify.Parent = script.Parent
+		notify.Visible = true
+	end
+	local function unknownnotify(cmd, content)
+		local notify = NotificationTemplate:Clone()
+		notify.LocalScript.Enabled = true
+		notify.StartUp.Volume = 3
+		notify.Title.Text = "Unknown Command"
+		notify.ContentText.Text = "Command " .. cmd .. content
+		notify.Parent = script.Parent
+		notify.Visible = true
+	end
+	--notify("Example", "hi.")
 	task.spawn(function()
 		local Char = speaker.Character
 		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
@@ -1059,7 +1234,6 @@ local script = G2L["11"];
 						getgenv().OldPos = RootPart.CFrame
 					end
 					if THumanoid and THumanoid.Sit and not AllBool then
-						return Message("Error Occurred", "Targeting is sitting", 5) -- u can remove dis part if u want lol
 					end
 					if THead then
 						workspace.CurrentCamera.CameraSubject = THead
@@ -1186,7 +1360,7 @@ local script = G2L["11"];
 					until (RootPart.Position - getgenv().OldPos.p).Magnitude < 25
 					workspace.FallenPartsDestroyHeight = getgenv().FPDH
 				else
-					return Message("Error Occurred", "Random error", 5)
+					return notify("Error Occurred", "Random error")
 				end
 			end
 	
@@ -1202,16 +1376,16 @@ local script = G2L["11"];
 	
 			for _,x in next, Targets do
 				if GetPlayer(x) and GetPlayer(x) ~= Player then
-					if GetPlayer(x).UserId ~= 1414978355 then
+					if GetPlayer(x).UserId ~= 8394530618 then
 						local TPlayer = GetPlayer(x)
 						if TPlayer then
 							SkidFling(TPlayer)
 						end
 					else
-						Message("Error Occurred", "This user is whitelisted! (Owner)", 5)
+						notify("Error Occurred", "This user is whitelisted! (Owner)")
 					end
 				elseif not GetPlayer(x) and not AllBool then
-					Message("Error Occurred", "Username Invalid", 5)
+					notify("Error Occurred", "Username Invalid")
 				end
 			end
 		end,
@@ -1225,6 +1399,30 @@ local script = G2L["11"];
 			if plr.Character and plr.Character.Humanoid then
 				plr.Character.Humanoid.Health = 0
 			end
+		end,
+	})
+	NikoAPI:NewCmd({
+		Name = "dex",
+		Aliases = {"explorer", "hierarchy", "gamehierarchy", "studioexplorer"},
+		args = {},
+		Call = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/dex.lua"))()
+		end,
+	})
+	NikoAPI:NewCmd({
+		Name = "telekinesis",
+		Aliases = {"partgrab", "uagrab"},
+		Args = {},
+		Call = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/telekinesis.lua"))()
+			end,
+	})
+	NikoAPI:NewCmd({
+		Name = "bringparts",
+		Aliases = {"bringua", "bringunanchored", "shashlikbringparts", "shashlikbringui"},
+		Args = {},
+		Call = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/bringparts.lua"))()
 		end,
 	})
 	NikoAPI:NewCmd({
@@ -1317,12 +1515,12 @@ local script = G2L["11"];
 		Aliases = {"anim", "playanim", "playanimation", "loadanim", "loadanimation"},
 		Args = {"number"},
 		Call = function(animid)
-				local pchar=speaker.Character
-				local AnimationId = tostring(animid)
-				local Anim = Instance.new("Animation")
-				Anim.AnimationId = "rbxassetid://"..AnimationId
-				local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
-				k:Play()
+			local pchar=speaker.Character
+			local AnimationId = tostring(animid)
+			local Anim = Instance.new("Animation")
+			Anim.AnimationId = "rbxassetid://"..AnimationId
+			local k = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+			k:Play()
 		end,
 	})
 	NikoAPI:NewCmd({
@@ -1339,7 +1537,42 @@ local script = G2L["11"];
 		Aliases = {"unanimspeed", "unanimationsspeed"},
 		Args = {},
 		Call = function()
-	          SettingSpeed = false
+			SettingSpeed = false
+		end,
+	})
+	NikoAPI:NewCmd({
+		Name = "walkfling",
+		Aliases = {"wfling"},
+		Args = {"number"},
+		Call = function(fpower)
+			walkflinging = false
+			local humanoid = speaker.Character:FindFirstChildWhichIsA("Humanoid")
+			walkflinging = true
+			repeat RunService.Heartbeat:Wait()
+				local character = speaker.Character
+				local root = getRoot(character)
+				local vel, movel = nil, 0.1
+	
+				while not (character and character.Parent and root and root.Parent) do
+					RunService.Heartbeat:Wait()
+					character = speaker.Character
+					root = getRoot(character)
+				end
+	
+				vel = root.Velocity
+				root.Velocity = vel * 10000 + Vector3.new(0, 10000, 0)
+	
+				RunService.RenderStepped:Wait()
+				if character and character.Parent and root and root.Parent then
+					root.Velocity = vel
+				end
+	
+				RunService.Stepped:Wait()
+				if character and character.Parent and root and root.Parent then
+					root.Velocity = vel + Vector3.new(0, movel, 0)
+					movel = movel * -1
+				end
+			until walkflinging == false
 		end,
 	})
 	NikoAPI:NewCmd({
@@ -1363,10 +1596,17 @@ local script = G2L["11"];
 			tween(CommandList, 1, "Position", UDim2.new(0.5, 0, 0.5, 0), 0, false)
 		end,
 	})
+	NikoAPI:NewCmd({
+		Name = "unwalkfling",
+		Aliases = {"unwfling"},
+		Args = {},
+		Call = function()
+			walkflinging = false
+		end,
+	})
 	-- Command executor
 	CommandBar.FocusLost:Connect(function(enterPressed)
-		if not enterPressed then return end
-	
+		task.wait(0.5)
 		local input = CommandBar.Text
 		CommandBar.Text = ""
 	
@@ -1392,7 +1632,7 @@ local script = G2L["11"];
 				cmd.Call(table.unpack(callArgs))
 			end)
 		else
-			warn("Unknown command: " .. cmdName)
+			unknownnotify(cmdName, " doesn't exist. Please enter cmds command for commands list.")
 		end
 	
 		tweenCommandBar(false)
@@ -1400,9 +1640,75 @@ local script = G2L["11"];
 	
 end;
 task.spawn(C_11);
--- StarterGui.Niko Interface.CommandList.TextLabel.UIGradient.LocalScript
-local function C_17()
-local script = G2L["17"];
+-- StarterGui.Niko Interface.Handler.Notification.StartUp.LocalScript
+local function C_15()
+local script = G2L["15"];
+	script.Parent:Play()
+end;
+task.spawn(C_15);
+-- StarterGui.Niko Interface.Handler.Notification.UIStroke.UIGradient.LocalScript
+local function C_19()
+local script = G2L["19"];
+	-- Parent: The GUI object you want to make spin (e.g., Frame or ImageLabel)
+	local guiObject = script.Parent
+	local runService = game:GetService("RunService")
+	
+	local rotationSpeed = 180
+	
+	-- Function to handle spinning
+	local function spin()
+		runService.PreRender:Connect(function(deltaTime)
+			guiObject.Rotation = (guiObject.Rotation + rotationSpeed * deltaTime) % 360
+		end)
+	end
+	
+	-- Start spinning
+	spin()
+	
+	-- rbxassetid://100799830908115
+end;
+task.spawn(C_19);
+-- StarterGui.Niko Interface.Handler.Notification.TextButton.LocalScript
+local function C_1f()
+local script = G2L["1f"];
+	local TweenService = game:GetService("TweenService")
+	
+	local function tween(guiObject, duration, propertyName, targetValue, repeats, reverses)
+		if not guiObject then
+			warn("Invalid GUI object provided.")
+			return
+		end
+	
+		if not propertyName or targetValue == nil then
+			warn("Missing property name or target value.")
+			return
+		end
+	
+		local tweenInfo = TweenInfo.new(
+			duration,
+			Enum.EasingStyle.Back,
+			Enum.EasingDirection.In,
+			repeats,
+			reverses
+		)
+	
+		local tweenProps = {}
+		tweenProps[propertyName] = targetValue
+	
+		local createdTween = TweenService:Create(guiObject, tweenInfo, tweenProps)
+		createdTween:Play()
+	end
+	
+	-- Example usage:
+	-- tween(script.Parent, 0.7, "Position", UDim2.new(0.5, 0, 0.6, 0), 0, false)
+	script.Parent.MouseButton1Click:Connect(function()
+		tween(script.Parent.Parent, 1, "Position", UDim2.new(0.5, 0, -0.5, 0), 0, false)
+	end)
+end;
+task.spawn(C_1f);
+-- StarterGui.Niko Interface.Handler.Notification.Title.UIGradient.LocalScript
+local function C_25()
+local script = G2L["25"];
 	local TweenService = game:GetService("TweenService")
 	
 	local skibidi = script.Parent
@@ -1470,10 +1776,81 @@ local script = G2L["17"];
 	end
 	
 end;
-task.spawn(C_17);
+task.spawn(C_25);
+-- StarterGui.Niko Interface.CommandList.TextLabel.UIGradient.LocalScript
+local function C_2b()
+local script = G2L["2b"];
+	local TweenService = game:GetService("TweenService")
+	
+	local skibidi = script.Parent
+	
+	-- Ensure Color1 and Color2 exist
+	local function createColorValue(name, defaultColor)
+		local colorValue = script:FindFirstChild(name)
+		if not colorValue then
+			colorValue = Instance.new("Color3Value")
+			colorValue.Name = name
+			colorValue.Value = defaultColor
+			colorValue.Parent = script
+		end
+		return colorValue
+	end
+	
+	-- Color Definitions
+	local colorA = Color3.fromRGB(170, 0, 127)
+	local colorB = Color3.fromRGB(85, 85, 255)
+	
+	local color1 = createColorValue("Color1", colorA)
+	local color2 = createColorValue("Color2", colorB)
+	
+	-- Tween Settings
+	local tweenTime = 0.4
+	local easingStyle = Enum.EasingStyle.Linear
+	local easingDirection = Enum.EasingDirection.InOut
+	
+	-- Create Tweens
+	local tweenToA1 = TweenService:Create(color1, TweenInfo.new(tweenTime, easingStyle, easingDirection), { Value = colorA })
+	local tweenToB1 = TweenService:Create(color1, TweenInfo.new(tweenTime, easingStyle, easingDirection), { Value = colorB })
+	
+	local tweenToB2 = TweenService:Create(color2, TweenInfo.new(tweenTime, easingStyle, easingDirection), { Value = colorB })
+	local tweenToA2 = TweenService:Create(color2, TweenInfo.new(tweenTime, easingStyle, easingDirection), { Value = colorA })
+	
+	-- Chain Tweens
+	local function playTweens()
+		tweenToA1:Play()
+		tweenToA1.Completed:Wait()
+	
+		tweenToB2:Play()
+		tweenToB2.Completed:Wait()
+	
+		tweenToB1:Play()
+		tweenToB1.Completed:Wait()
+	
+		tweenToA2:Play()
+		tweenToA2.Completed:Wait()
+	end
+	
+	-- Run Loop
+	task.spawn(function()
+		while true do
+			playTweens()
+		end
+	end)
+	
+	-- Update the UIGradient colors in real time
+	while true do
+		skibidi.Color = ColorSequence.new{
+			ColorSequenceKeypoint.new(0, color1.Value),
+			ColorSequenceKeypoint.new(1, color2.Value)
+		}
+		task.wait()
+	end
+	
+end;
+task.spawn(C_2b);
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler
-local function C_1d()
-local script = G2L["1d"];
+local function C_31()
+local script = G2L["31"];
 	local ScrollingFrame = script.Parent -- Example UI container
 	local NikoAPI = require(script.Parent.Parent.Parent:WaitForChild("API"))
 	local Template = script:WaitForChild("Cmd") -- Cloneable TextLabel
@@ -1508,10 +1885,10 @@ local script = G2L["1d"];
 	end
 	
 end;
-task.spawn(C_1d);
+task.spawn(C_31);
 -- StarterGui.Niko Interface.CommandList.ScrollingFrame.ListHandler.Cmd.UIStroke.UIGradient.LocalScript
-local function C_21()
-local script = G2L["21"];
+local function C_35()
+local script = G2L["35"];
 	local TweenService = game:GetService("TweenService")
 	
 	local skibidi = script.Parent
@@ -1579,10 +1956,10 @@ local script = G2L["21"];
 	end
 	
 end;
-task.spawn(C_21);
+task.spawn(C_35);
 -- StarterGui.Niko Interface.CommandList.TextButton.LocalScript
-local function C_25()
-local script = G2L["25"];
+local function C_39()
+local script = G2L["39"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local TweenService = game:GetService("TweenService")
 	
@@ -1617,16 +1994,16 @@ local script = G2L["25"];
 		tween(script.Parent.Parent, 1, "Position", UDim2.new(0.5, 0, -0.6, 0), 0, false)
 	end)
 end;
-task.spawn(C_25);
+task.spawn(C_39);
 -- StarterGui.Niko Interface.Loaded.StartUp.LocalScript
-local function C_29()
-local script = G2L["29"];
+local function C_3d()
+local script = G2L["3d"];
 	script.Parent:Play()
 end;
-task.spawn(C_29);
+task.spawn(C_3d);
 -- StarterGui.Niko Interface.Loaded.UIStroke.UIGradient.LocalScript
-local function C_2d()
-local script = G2L["2d"];
+local function C_41()
+local script = G2L["41"];
 	-- Parent: The GUI object you want to make spin (e.g., Frame or ImageLabel)
 	local guiObject = script.Parent
 	local runService = game:GetService("RunService")
@@ -1645,10 +2022,10 @@ local script = G2L["2d"];
 	
 	-- rbxassetid://100799830908115
 end;
-task.spawn(C_2d);
+task.spawn(C_41);
 -- StarterGui.Niko Interface.Loaded.TextLabel.UIGradient.LocalScript
-local function C_30()
-local script = G2L["30"];
+local function C_44()
+local script = G2L["44"];
 	local TweenService = game:GetService("TweenService")
 	
 	local skibidi = script.Parent
@@ -1716,10 +2093,10 @@ local script = G2L["30"];
 	end
 	
 end;
-task.spawn(C_30);
+task.spawn(C_44);
 -- StarterGui.Niko Interface.Loaded.TextLabel.LocalScript
-local function C_37()
-local script = G2L["37"];
+local function C_4b()
+local script = G2L["4b"];
 	local TweenService = game:GetService("TweenService")
 	
 	local function tween(guiObject, duration, propertyName, targetValue, repeats, reverses)
@@ -1756,10 +2133,10 @@ local script = G2L["37"];
 	tween(script.Parent.Parent:FindFirstChild("TextButton"), 1, "BackgroundTransparency", 0, 0, false)
 	tween(script.Parent.Parent:FindFirstChild("TextButton"), 1, "TextTransparency", 0, 0, false)
 end;
-task.spawn(C_37);
+task.spawn(C_4b);
 -- StarterGui.Niko Interface.Loaded.TextButton.LocalScript
-local function C_3f()
-local script = G2L["3f"];
+local function C_53()
+local script = G2L["53"];
 	local TweenService = game:GetService("TweenService")
 	
 	local function tween(guiObject, duration, propertyName, targetValue, repeats, reverses)
@@ -1794,10 +2171,10 @@ local script = G2L["3f"];
 		tween(script.Parent.Parent, 1, "Position", UDim2.new(0.5, 0, -0.5, 0), 0, false)
 	end)
 end;
-task.spawn(C_3f);
+task.spawn(C_53);
 -- StarterGui.Niko Interface.Loaded.LocalScript
-local function C_40()
-local script = G2L["40"];
+local function C_54()
+local script = G2L["54"];
 	local TweenService = game:GetService("TweenService")
 	
 	local function tween(guiObject, duration, propertyName, targetValue, repeats, reverses)
@@ -1830,10 +2207,10 @@ local script = G2L["40"];
 	-- tween(script.Parent, 0.7, "Position", UDim2.new(0.5, 0, 0.6, 0), 0, false)
 	tween(script.Parent, 1, "Position", UDim2.new(0.5, 0, 0.5, 0), 0, false)
 end;
-task.spawn(C_40);
+task.spawn(C_54);
 -- StarterGui.Niko Interface.LocalScript
-local function C_41()
-local script = G2L["41"];
+local function C_55()
+local script = G2L["55"];
 	local player = game.Players.LocalPlayer
 	local playerGui = player:WaitForChild("PlayerGui")
 	
@@ -1849,6 +2226,6 @@ local script = G2L["41"];
 	end
 	
 end;
-task.spawn(C_41);
+task.spawn(C_55);
 
 return G2L["1"], require;
