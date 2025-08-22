@@ -1109,7 +1109,10 @@ local script = G2L["11"];
 		if gameProcessed then return end
 	
 		if input.KeyCode == Enum.KeyCode.Equals then
+			CommandBar.Text = ""
 			tweenCommandBar(not isOpen)
+			task.wait(0.1)
+			CommandBar.Text = ""
 		end
 	end)
 	
@@ -1406,7 +1409,7 @@ local script = G2L["11"];
 		Aliases = {"explorer", "hierarchy", "gamehierarchy", "studioexplorer"},
 		args = {},
 		Call = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/dex.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/scripts/dex.lua"))()
 		end,
 	})
 	NikoAPI:NewCmd({
@@ -1414,15 +1417,15 @@ local script = G2L["11"];
 		Aliases = {"partgrab", "uagrab"},
 		Args = {},
 		Call = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/telekinesis.lua"))()
-			end,
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/scripts/telekinesis.lua"))()
+		end,
 	})
 	NikoAPI:NewCmd({
 		Name = "bringparts",
 		Aliases = {"bringua", "bringunanchored", "shashlikbringparts", "shashlikbringui"},
 		Args = {},
 		Call = function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/bringparts.lua"))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EpikCatto6900/NikoAdminPublic/refs/heads/main/scripts/bringparts.lua"))()
 		end,
 	})
 	NikoAPI:NewCmd({
@@ -1606,7 +1609,6 @@ local script = G2L["11"];
 	})
 	-- Command executor
 	CommandBar.FocusLost:Connect(function(enterPressed)
-		task.wait(0.5)
 		local input = CommandBar.Text
 		CommandBar.Text = ""
 	
